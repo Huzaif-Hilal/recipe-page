@@ -23,7 +23,7 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 
 - Solution URL: [https://github.com/Huzaif-Hilal/recipe-page]
 
-- Live Site URL: [https://github.com/Huzaif-Hilal/recipe-page]
+- Live Site URL: [https://omelette-recipe-by-huzaif.netlify.app/]
 
 ## My process
 
