@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Recipe page</title>
+  <link rel="icon" href="/images/favicon-32x32.png">
+  <style>
+    :root{
+    --White: hsl(0, 0%, 100%);
+    --Rose-White: hsl(330, 100%, 98%);
+    --Eggshell: hsl(30, 54%, 90%);
+    --Light-Grey: hsl(30, 18%, 87%);
+    --Wenge-Brown: hsl(30, 10%, 34%);
+    --Dark-Charcoal: hsl(24, 5%, 18%);
+    --Nutmeg: hsl(14, 45%, 36%);
+    --Dark-Raspberry: hsl(332, 51%, 32%);
+    --font-s: 16px;
+    --font-fam-young-serif: 'Young Serif', serif;
+    --font-fam-outfit: 'Outfit', sans-serif;
+    --font-wgh-1: 400;
+    --font-wgh-2: 600;
+    --font-wgh-3: 700;
+    --mobile-width: 414px;
+    --desktop-width: 1440px;
+    }
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      background-color: var(--Eggshell);
+      display: flex;
+      justify-content: center;
+    }
+    body > main
+    {
+      width: 600px;
+      height: max-content;
+      background-color: var(--White);
+      margin-top: 15dvh;
+      border-radius: 20px;
+    }
+    body > main > div.main-body {
+      margin: 36px;
+    }
+    body > main >  div.img-container{
+      max-width: 100%;
+      height: 250px;
+      margin: 36px;
+    }
+    body > main >  div.img-container > img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: center;
+    }
+    body > main > div.main-body > h1.main-heading{
+      font-family: var(--font-fam-young-serif);
+      font-weight: var(--font-wgh-1);
+      margin: 25px 0px;
+    }
+    body > main > div.main-body > p.description, body > main > div.main-body > div.nutrition-container > p.description  {
+      color: var(--Wenge-Brown);
+      font-family: var(--font-fam-outfit);
+      font-size: 15px;
+      font-weight: var(--font-wgh-1);
+    }
+    body > main > div.main-body > div.timing-container{
+      max-width: 100%;
+      height: 120px;
+      margin: 40px 0px;     
+      background-color: var(--Rose-White);
+      border-radius: 10px;
+      padding: 20px 25px;
+    }
+    body > main > div.main-body > div.timing-container > h3{
+      font-size: 1.15rem;
+      font-weight: var(--font-wgh-2);
+      font-family: var(--font-fam-outfit);
+      color: var(--Dark-Raspberry);
+    }
+    body > main > div.main-body > div.timing-container > ul {
+      max-width: 100%;
+      height: 115px;
+      margin: 0px 23px;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: var(--font-fam-outfit);
+    }
+    body > main > div.main-body > div.timing-container > ul > li, body > main > div.main-body > div.instructions-container > ol > li {
+      color: var(--Dark-Raspberry);
+      padding: 0px 0px 10px 0px; 
+    }
+    body > main > div.main-body > div.timing-container > ul > li > p.left-side{
+      display: inline;
+      margin: 0px 0px 0px 10px;
+      color: var(--Wenge-Brown);
+      font-weight: var(--font-wgh-3);
+      font-size: 15px;
+    }
+    
+    body > main > div.main-body > div.timing-container > ul > li > p.right-side{
+      display: inline;
+      color: var(--Wenge-Brown);
+      font-size: 15px;
+    }
+    body > main > div.main-body > div.ingredients-container,  body > main > div.main-body > div.instructions-container,  body > main > div.main-body > div.nutrition-container{
+      max-width: 100%;
+      height: max-content; 
+    }
+    body > main > div.main-body > div.nutrition-container{
+      margin-top: 25px;
+    }
+    body > main > div.main-body > div.ingredients-container > h2, body > main > div.main-body > div.instructions-container > h2, body > main > div.main-body > div.nutrition-container > h2{
+      font-size: 1.7rem;
+      color: var(--Nutmeg);
+      font-family: var(--font-fam-young-serif);
+      font-weight: var(--font-wgh-1);
+      margin: 0px 0px 20px 0px;
+    }
+    body > main > div.main-body > div.ingredients-container > ul, body > main > div.main-body > div.instructions-container > ol{
+      margin: 10px 0px 0px 0px;
+      max-width: 100%;
+      min-height: 100%;
+      border: 0px;
+      border-bottom: 1px solid var(--Light-Grey);
+    }
+    body > main > div.main-body > div.ingredients-container > ul > li, body > main > div.main-body > div.instructions-container > ol > li{
+      color: var(--Dark-Raspberry);
+      padding: 0px 0px 15px 0px;
+      margin: 0px 0px 0px 22px;
+    }
+    body > main > div.main-body > div.ingredients-container > ul > li > p.ingredient{
+      margin: 0px 0px 0px 20px;
+      color: var(--Wenge-Brown);
+      font-family: var(--font-fam-outfit);
+      font-size: 14px;
+      font-weight: var(--font-wgh-1);
+    }
+    body > main > div.main-body > div.instructions-container{
+      margin-top: 20px;
+      height: max-content;
+    }
+    body > main > div.main-body > div.instructions-container > ol > li{
+      color: var(--Nutmeg);
+      font-weight: var(--font-wgh-3);
+      font-family: var(--font-fam-outfit);
+      font-size: 16px;
+    }
+    body > main > div.main-body > div.instructions-container > ol > li > p.left-side {
+      display: inline;
+      margin: 0px 0px 0px 10px;
+      color: var(--Wenge-Brown);
+      font-weight: var(--font-wgh-3);
+      font-size: 15px;
+    }
+    body > main > div.main-body > div.instructions-container > ol > li > p.right-side{
+      display: inline;
+      color: var(--Wenge-Brown);
+      font-size: 15px;
+      font-weight: var(--font-wgh-1);
+    }
+    body > main > div.main-body > div.nutrition-container > div.nutritions-grid{
+      margin-top: 30px;
+      width: 100%;
+      height: 200px;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+    }
+    body > main > div.main-body > div.nutrition-container > div.nutritions-grid > div.grid-row{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0px 0px 0px 30px;
+      align-items: center;
+      border-bottom: 1px solid var(--Light-Grey);
+    }
+    body > main > div.main-body > div.nutrition-container > div.nutritions-grid > div.grid-row > p.nutrition{
+      color: var(--Wenge-Brown);
+      font-family: var(--font-fam-outfit);
+      font-weight: var(--font-wgh-1);
+    }
+    body > main > div.main-body > div.nutrition-container > div.nutritions-grid > div.grid-row > p.nutrition-quantity{
+      color: var(--Nutmeg);
+      font-weight: var(--font-wgh-2);
+      font-family: var(--font-fam-outfit);
+    }
+    @media only screen and (max-width:  600px)
+    {
+      body > main{
+        width: 100%;
+        margin-top: 0px;
+      }
+      body > main > div.img-container, body > main > div.main-body {
+        margin: 36px;
+      }
+    }
+    @media only screen and (max-width:  414px)
+    {
+      body > main > div.img-container{
+        margin: 0px;
+      }
+      body > main > div.main-body {
+        margin: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="img-container">
+      <img src="/images/image-omelette.jpeg" alt="Food-Image">
+    </div>
+
+    <div class="main-body">
+    <h1 class="main-heading">Simple Omelette Recipe</h1>
+    <p class="description">An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
+      to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+    
+    <div class="timing-container">
+      <h3>Preparation time</h3>
+      <ul class="timing-list">
+        <li>
+          <p class="left-side">Total:</p>
+          <p class="right-side">Approximately 10 minutes</p>
+        </li>
+        <li>
+          <p class="left-side">Preparation:</p>
+          <p class="right-side">5 minutes</p>
+        </li>
+        <li>
+          <p class="left-side">Cooking:</p>
+          <p class="right-side">5 minutes</p>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="ingredients-container">
+      <h2>Ingredients</h2>
+      <ul class="ingredients-list">
+        <li>
+         <p class="ingredient">2-3 large eggs</p>
+        </li>
+        <li>
+         <p class="ingredient">Salt, to taste</p>
+        </li>
+        <li>
+         <p class="ingredient">Pepper, to taste</p>
+        </li>
+        <li>
+         <p class="ingredient">1 tablespoon of butter or oil</p>
+        </li>
+        <li>
+         <p class="ingredient">Optional fillings: cheese, diced vegetables, cooked meats, herbs</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="instructions-container">
+      <h2>Instructions</h2>
+
+      <ol class="instructions-list">
+        <li>
+          <p class="left-side">Beat the eggs:</p>
+          <p class="right-side">In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</p>
+        </li>
+        <li>
+          <p class="left-side">Heat the pan:</p>
+          <p class="right-side">Place a non-stick frying pan over medium heat and add butter or oil.</p>
+        </li>
+        <li>
+          <p class="left-side">Cook the omelette:</p>
+          <p class="right-side">Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</p>
+        </li>
+        <li>
+          <p class="left-side">Add fillings (optional):</p>
+          <p class="right-side">When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</p>
+        </li>
+        <li>
+          <p class="left-side">Fold and serve:</p>
+          <p class="right-side"> As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</p>
+        </li>
+        <li>
+          <p class="left-side">Enjoy:</p>
+          <p class="right-side">Serve hot, with additional salt and pepper if needed.</p>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="nutrition-container">
+      <h2>Nutrition</h2>
+
+      <p class="description">The table below shows nutritional values per serving without the additional fillings.</p>
+
+      <div class="nutritions-grid">
+        <div class="grid-row"><p class="nutrition">Calories</p><p class="nutrition-quantity">277kcal</p></div>
+        <div class="grid-row"><p class="nutrition">Carbs</p><p class="nutrition-quantity">0g</p></div>
+        <div class="grid-row"><p class="nutrition">Protein</p><p class="nutrition-quantity">20g</p></div>
+        <div class="grid-row"><p class="nutrition">Fat</p><p class="nutrition-quantity">22g</p></div>
+      </div>
+    </div>
+    </div>
+  </main>
+  </body>
+  </html>
